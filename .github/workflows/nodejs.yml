@@ -39,7 +39,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: yarn install, build, and test
         run: |
-          npm instlal
-          npm run build
+          yarn install
+          yarn run build
         env:
           CI: true

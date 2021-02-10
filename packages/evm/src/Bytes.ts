@@ -7,7 +7,7 @@ export class Bytes {
 
   static fromString (value: string) {
     if (!HEX_REGEX.test(value) || value.length % 2 !== 0) {
-      throw new TypeError('Invalid value')
+      throw new TypeError('Invalid value ' + value)
     }
     return new Bytes(value.toLowerCase())
   }
@@ -46,6 +46,10 @@ export class Bytes {
 
   slice (start: number, end: number) {
     return new Bytes(this.value.slice(start * 2, end * 2))
+  }
+
+  padZeroesEnd (length: number) {
+    return new Bytes(this.value.padEnd(length * 2, '0'))
   }
 
   concat (other: Bytes) {

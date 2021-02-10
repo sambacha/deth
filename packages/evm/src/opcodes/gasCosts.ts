@@ -2,6 +2,7 @@ export const GasCost = {
   ZERO: 0,
   BASE: 2,
   VERYLOW: 3,
+  COPY: 3,
   LOW: 5,
   MID: 8,
   HIGH: 10,
@@ -11,6 +12,7 @@ export const GasCost = {
   SSET: 20_000,
   SRESET: 5_000,
   CODEDEPOSIT: 200,
+  CREATE: 32_000,
 }
 
 export const GasRefund = {

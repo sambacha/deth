@@ -38,6 +38,8 @@ import { invalidOpcode } from './invalid'
 import { makeOpDUP, makeOpSWAP, opPOP } from './stack'
 import { opMSIZE, opMLOAD, opMSTORE, opMSTORE8 } from './memory'
 import { opSSTORE, opSLOAD } from './storage'
+import { opCODESIZE, opCODECOPY } from './code'
+import { opCREATE } from './create'
 
 export { opUnreachable } from './invalid'
 export { makeOpPUSH } from './stack'
@@ -75,6 +77,8 @@ const OP_CODES: Record<number, Opcode | undefined> = {
   0x1b: opSHL,
   0x1c: opSHR,
   0x1d: opSAR,
+  0x38: opCODESIZE,
+  0x39: opCODECOPY,
   0x50: opPOP,
   0x51: opMLOAD,
   0x52: opMSTORE,
@@ -118,6 +122,7 @@ const OP_CODES: Record<number, Opcode | undefined> = {
   0x9d: makeOpSWAP(14),
   0x9e: makeOpSWAP(15),
   0x9f: makeOpSWAP(16),
+  0xf0: opCREATE,
   0xf3: opRETURN,
   0xfd: opREVERT,
 }

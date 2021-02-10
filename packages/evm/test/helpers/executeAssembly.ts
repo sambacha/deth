@@ -29,8 +29,11 @@ export function executeAssembly (
   return executeCode({ ...DEFAULT_MESSAGE, ...params, code }, state)
 }
 
-function assemblyToBytecode (code: string): Bytes {
-  const instructions = code.trim().split(/\s+/)
+export function assemblyToBytecode (code: string): Bytes {
+  const instructions = code
+    .replace(/\/\/.*/g, ' ') // remove comments
+    .trim()
+    .split(/\s+/)
   let result = Bytes.EMPTY
   for (const instruction of instructions) {
     const opcode = OPCODES[instruction]

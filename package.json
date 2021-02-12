@@ -2,10 +2,6 @@
   "name": "deth",
   "private": true,
   "license": "MIT",
-  "engines": {
-    "node": "^11.15.0",
-    "yarn": ">=1.15.2"
-  },
   "scripts": {
     "lint": "wsrun -c lint",
     "lint:fix": "wsrun -c lint:fix",
